@@ -1,0 +1,26 @@
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.productListItem {
+    width: 25%;
+    height: fit-content;
+    padding: 5px;
+}
+
+@media (min-width: 0px) {
+    .productListItem {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .productListItem {
+        width: 20%;
+    }
+}
