@@ -10,11 +10,11 @@ const ProductRating = ({ averageRating }: ProductRatingProps) => {
     const averageRatingAsNumber = Math.round(Number.parseFloat(averageRating));
     return (
         <div className="productRating">
-            {[...Array(averageRatingAsNumber)].map(() => (
-                <img src={starIcon} alt="Star icon" />
+            {[...Array(averageRatingAsNumber)].map((_, index) => (
+                <img key={index} src={starIcon} alt="Star icon" />
             ))}
-            {[...Array(5 - averageRatingAsNumber)].map(() => (
-                <img src={emptyStarIcon} alt="Emptytar icon" />
+            {[...Array(5 - averageRatingAsNumber)].map((_, index) => (
+                <img key={index} src={emptyStarIcon} alt="Emptytar icon" />
             ))}
             {averageRating}
         </div>
