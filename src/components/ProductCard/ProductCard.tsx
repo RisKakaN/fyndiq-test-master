@@ -1,4 +1,5 @@
 import { FyndiqArticleInterface } from "../../api/types";
+import ProductRating from "../ProductRating/ProductRating";
 
 import "./ProductCard.css";
 import { getFormattedDate } from "./ProductCard.util";
@@ -54,7 +55,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 <span className="productCardDescription" title={title}>
                     {title}
                 </span>
-                <span className="productCardRating">{averageRating}</span>
+                <ProductRating averageRating={averageRating} />
                 <div className="productCardDeliveryDate">
                     <img src={deliveryIcon} alt="Delivery icon" />
                     <span className="productCardDeliveryDateText">

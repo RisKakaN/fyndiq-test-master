@@ -1,0 +1,13 @@
+.productRating {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 5px;
+    font-size: small;
+    align-items: center
+}
+
+.productRating > img {
+    height: 20px;
+    width: 20px;
+}
