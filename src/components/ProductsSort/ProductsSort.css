@@ -1,0 +1,7 @@
+.productsSort {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    font-size: large;
+    flex-wrap: nowrap;
+}
