@@ -1,8 +1,10 @@
 import { FyndiqArticleInterface } from "../../api/types";
 
 import "./ProductCard.css";
+import { getFormattedDate } from "./ProductCard.util";
 const productPlaceholder = require("../../assets/productPlaceholder.png");
 const quickBuyIcon = require("../../assets/quickBuyIcon.png");
+const deliveryIcon = require("../../assets/deliveryIcon.png");
 
 type ProductCardProps = { product: FyndiqArticleInterface };
 
@@ -53,9 +55,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     {title}
                 </span>
                 <span className="productCardRating">{averageRating}</span>
-                <span className="productCardDeliveryDate">
-                    {expectedDeliveryDate}
-                </span>
+                <div className="productCardDeliveryDate">
+                    <img src={deliveryIcon} alt="Delivery icon" />
+                    <span className="productCardDeliveryDateText">
+                        {getFormattedDate(expectedDeliveryDate)}
+                    </span>
+                </div>
             </div>
         </div>
     );

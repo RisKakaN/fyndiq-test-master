@@ -63,6 +63,7 @@
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+    height: 30px;
 }
 
 .productCardRating {
@@ -70,6 +71,12 @@
 }
 
 .productCardDeliveryDate {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.productCardDeliveryDateText {
     font-size: small;
     font-weight: bold;
     color: rgb(0, 131, 138);
