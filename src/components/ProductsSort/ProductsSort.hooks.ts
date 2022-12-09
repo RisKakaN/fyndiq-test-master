@@ -5,6 +5,7 @@ export enum SortOptions {
     Default = "Default",
     MostExpensive = "MostExpensive",
     Cheapest = "Cheapest",
+    AverageRating = "AverageRating",
 }
 export const useProductsSort = () => {
     const [activeSort, setActiveSort] = useState<SortOptions>(
@@ -21,6 +22,12 @@ export const useProductsSort = () => {
         } else if (order === SortOptions.Cheapest) {
             return [...products].sort(
                 (a, b) => a.price.amount - b.price.amount
+            );
+        } else if (order === SortOptions.AverageRating) {
+            return [...products].sort(
+                (a, b) =>
+                    Number.parseFloat(b.averageRating) -
+                    Number.parseFloat(a.averageRating)
             );
         } else {
             return products;

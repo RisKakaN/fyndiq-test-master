@@ -17,6 +17,7 @@ const ProductsSort = ({ setActiveSort }: ProductsSortProps) => {
                 <option value={SortOptions.Default}>Mest relevanta</option>
                 <option value={SortOptions.MostExpensive}>Dyrast först</option>
                 <option value={SortOptions.Cheapest}>Billigast först</option>
+                <option value={SortOptions.AverageRating}>Meddelbetyg</option>
             </select>
         </div>
     );
