@@ -6,11 +6,23 @@ const productPlaceholder = require("../../assets/productPlaceholder.png");
 type ProductCardProps = { product: FyndiqArticleInterface };
 
 const ProductCard = ({ product }: ProductCardProps) => {
-    const { images, title, price, averageRating, expectedDeliveryDate } =
-        product;
+    const {
+        images,
+        title,
+        price,
+        averageRating,
+        expectedDeliveryDate,
+        articleUrl,
+    } = product;
 
     return (
-        <div className="productCard">
+        <div
+            className="productCard"
+            onClick={() => {
+                // Just for fun...
+                window.location.href = `https://fyndiq.se/${articleUrl}`;
+            }}
+        >
             <img
                 className="productCardImg"
                 src={images[0].url || productPlaceholder}
@@ -30,9 +42,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
                         onClick={(event) => {
                             event.stopPropagation();
                             console.log("Added to cart");
-                        }}>
-                            Add
-                        </button>
+                        }}
+                    >
+                        Add
+                    </button>
                 </div>
                 <span className="productCardDescription" title={title}>
                     {title}
