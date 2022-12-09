@@ -2,6 +2,7 @@ import { FyndiqArticleInterface } from "../../api/types";
 
 import "./ProductCard.css";
 const productPlaceholder = require("../../assets/productPlaceholder.png");
+const quickBuyIcon = require("../../assets/quickBuyIcon.png");
 
 type ProductCardProps = { product: FyndiqArticleInterface };
 
@@ -37,15 +38,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <div className="productCardInfoContainer">
                 <div className="productCardPriceAndQuickBuy">
                     <span className="productCardPrice">{price.formatted}</span>
-                    <button
-                        className="productCardQuickBuyButton"
-                        onClick={(event) => {
-                            event.stopPropagation();
-                            console.log("Added to cart");
-                        }}
-                    >
-                        Add
-                    </button>
+                    <div className="productCardQuickBuyButton">
+                        <img
+                            src={quickBuyIcon}
+                            alt="Quick buy"
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                console.log("Added to cart");
+                            }}
+                        />
+                    </div>
                 </div>
                 <span className="productCardDescription" title={title}>
                     {title}
