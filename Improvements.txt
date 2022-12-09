@@ -1,0 +1,25 @@
+For this assignment with its time restriction, these were my priorities:
+- Finish the minimum requirements.
+- All functionality in place.
+- Ok looking in terms of styling, but if time is tight, then do the minimum styling necessary.
+- Good code structure.
+- Bug free.
+
+What can be improved or what I would like to do:
+- I could not find the data for "Number of sold articles", so I did not include it in the product card.
+- Accessibility
+- Testing
+    - I did not put time into testing because I did not have time. Testing is always a must, but it should also be given time for it so that good quality tests can be written.
+- Performance (it is working as it is now with this limited data, design, and requirements)
+    - (Sorting and filtering should be from backend.)
+    - Do some testing to see where performance can be improved.
+- Styling
+    - Improve responsiveness.
+    - Can be made more similar to the design requirements.
+- Improve code structure.
+    - The code could definetely need some more iterations of reading, so that I can fix whatever is bad or unclear.
+- Improve reusability of components.
+    - E.g. filter on 50kr. This was a requirement so I just hardcoded 50 in the text and as filter value, for simplicity's sake and save time.
+    So this would only work for 50kr. But with some small tweaking, I can make it more generic.
+
+- And more... which I cannot come up with right now :D
