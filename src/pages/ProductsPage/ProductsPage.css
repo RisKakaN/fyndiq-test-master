@@ -12,3 +12,51 @@
     align-items: center;
     justify-content: center;
 }
+
+.productsPageFilterAndSort {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.productsPageFilter {
+    display: flex;
+}
+.productsPageSort {
+    display: flex;
+}
+
+@media (min-width: 0px) {
+    .productsPageFilterAndSort {
+        justify-content: center;
+    }
+
+    .productsPageFilter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .productsPageSorting {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .productsPageFilterAndSort {
+        justify-content: space-between;
+    }
+
+    .productsPageFilter {
+        width: 50%;
+        justify-content: start;
+    }
+
+    .productsPageSorting {
+        width: 50%;
+        justify-content: end;
+    }
+}

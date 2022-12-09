@@ -8,13 +8,14 @@ import {
     LOADING_STATES,
     LOADING_SUCCEEDED,
 } from "../../types";
+import { useProductsFilter } from "../ProductsFilter/ProductsFilter.hooks";
 
 interface ProductsState {
     loading: LOADING_STATES;
     products: FyndiqArticleInterface[];
 }
 
-// Basic way of handling the presentation of data loading, failed, succeded, 
+// Basic way of handling the presentation of data loading, failed, succeded,
 // by using loading states.
 const initialProductsState: ProductsState = {
     loading: LOADING_NOT_STARTED,
@@ -24,6 +25,23 @@ const initialProductsState: ProductsState = {
 export const useProductList = () => {
     const [productsState, setProductsState] =
         useState<ProductsState>(initialProductsState);
+
+    const {
+        productsFilterActive,
+        setProductsFilterActive,
+        filterProductsLessThan,
+    } = useProductsFilter();
+
+    const getProducts = (
+        applyFilter: boolean,
+        products: FyndiqArticleInterface[]
+    ) => {
+        if (applyFilter) {
+            return filterProductsLessThan(50, products);
+        } else {
+            return products;
+        }
+    };
 
     useEffect(() => {
         setProductsState({
@@ -47,6 +65,8 @@ export const useProductList = () => {
 
     return {
         loading: productsState.loading,
-        products: productsState.products,
+        products: getProducts(productsFilterActive, productsState.products),
+        productsFilterActive,
+        setProductsFilterActive,
     };
 };

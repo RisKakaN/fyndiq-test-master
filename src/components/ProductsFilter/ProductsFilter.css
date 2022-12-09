@@ -1,0 +1,6 @@
+.productsFilter {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    font-size: large;
+}
